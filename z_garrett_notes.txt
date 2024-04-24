@@ -2,4 +2,5 @@ https://stackoverflow.com/questions/74000154/how-do-i-make-sure-answers-are-from
 https://github.com/rokbenko/ai-playground/blob/main/llamaindex-tutorials/1-Create_llama/my-app/app/api/chat/llamaindex-stream.ts
 https://stackoverflow.com/questions/76976251/openai-chatgpt-gpt-3-5-api-how-do-i-make-a-fine-tuned-gpt-3-5-model-only-answ
 https://youtu.be/egnf8L-EUJU
+https://www.youtube.com/watch?v=DMcxxg5iEZQ
 https://www.youtube.com/watch?v=T-D1OfcDW1M
