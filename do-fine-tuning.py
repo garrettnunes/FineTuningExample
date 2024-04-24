@@ -4,11 +4,14 @@ import time
 import csv
 import openai
 
-model = "ft:gpt-3.5-turbo-0125:personal::9DbeHFcw" # use gpt-3.5-turbo custom
-# model = "gpt-3.5-turbo" # use gpt-3.5-turbo by default
+from dotenv import load_dotenv
+load_dotenv()
+
+# model = "ft:gpt-3.5-turbo-0125:personal::9DbeHFcw" # use gpt-3.5-turbo custom
+model = "gpt-3.5-turbo" # use gpt-3.5-turbo by default
 
 def setup_api_key():
-    os.environ["OPENAI_API_KEY"] = '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'
+    openai.api_key = os.environ['OPENAI_KEY']
 
 def create_fine_tuning_file(file_path):
     print("Processing fine tuning file " + file_path)
@@ -75,7 +78,7 @@ def load_csv_finetuning(csv_file, output_path, only_system=False):
 if __name__ == '__main__':
     setup_api_key()
     fine_tuning_data = "WHERE_YOU_WANT_TO_OUTPUT.jsonl"
-    load_csv_finetuning("YOUR_RAW_FINETUNING_DATA.csv", fine_tuning_data, only_system=True)
+    load_csv_finetuning("townsend_test.csv", fine_tuning_data, only_system=True)
     fine_tuning_file = create_fine_tuning_file(fine_tuning_data)
     id = fine_tune_model(fine_tuning_file)
     print(openai.fine_tuning.jobs.list(limit=10))
